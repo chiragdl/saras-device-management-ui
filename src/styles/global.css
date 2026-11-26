@@ -1,0 +1,54 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#F5F7FA;color:#1A1E26;font-family:Poppins,system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font-family:inherit}
+input,select,textarea{border-color:#D5DBE4}
+input[type=radio],input[type=checkbox]{border-color:initial}
+a{color:#005BB8}
+a:hover{color:#0070E0}
+:focus-visible{outline:3px solid #0070E0;outline-offset:2px}
+header :focus-visible{outline-color:#FFFFFF}
+label[data-dropzone]:has(input:focus-visible){outline:3px solid #0070E0;outline-offset:2px}
+@keyframes popIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes epHalo{0%{box-shadow:0 0 0 0 rgba(74,222,128,.4)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+@keyframes dzFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes dzRipple{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes barMove{from{background-position:0 0}to{background-position:32px 0}}
+.stat-card{position:relative}
+.stat-card .stat-tip{opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .15s,transform .15s,visibility .15s}
+.stat-card:hover .stat-tip,.stat-card:focus-within .stat-tip{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.sdc-bar{position:relative}
+.sdc-bar .sdc-tip{position:absolute;left:50%;bottom:calc(100% + 9px);transform:translate(-50%,4px);opacity:0;visibility:hidden;transition:opacity .15s,transform .15s,visibility .15s;pointer-events:none;z-index:6}
+.sdc-bar:hover .sdc-tip{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.sdc-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1A2740}
+.sdc-fill{transition:height .9s cubic-bezier(.22,.61,.18,1)}
+.sdc-meter-fill{transition:width .9s cubic-bezier(.22,.61,.18,1)}
+@keyframes heartbeat{0%{transform:scale(1)}10%{transform:scale(1.28)}20%{transform:scale(1)}32%{transform:scale(1.18)}44%{transform:scale(1)}100%{transform:scale(1)}}
+@keyframes hbPing{0%{transform:scale(.6);opacity:.5}70%{transform:scale(1.9);opacity:0}100%{transform:scale(1.9);opacity:0}}
+@media (prefers-reduced-motion:reduce){.hb-icon{animation:none!important}.hb-ping,.gv-ping{display:none!important}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pillPop{from{opacity:0;transform:scale(.8) translateY(-2px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.kpi-tile{transition:box-shadow .16s cubic-bezier(.22,1,.36,1),transform .16s cubic-bezier(.22,1,.36,1)}
+.kpi-tile:hover{transform:translateY(-3px)!important;box-shadow:0 4px 8px -2px rgba(33,46,75,.08),0 14px 30px -10px rgba(28,74,107,.3)!important}
+.kpi-arrow{opacity:0;transform:translate(-4px,4px);transition:opacity .16s cubic-bezier(.22,1,.36,1),transform .16s cubic-bezier(.22,1,.36,1)}
+.kpi-tile:hover .kpi-arrow{opacity:1;transform:translate(0,0)}
+.ct-card:hover .ct-title{color:#0070E0}
+@media (prefers-reduced-motion:reduce){.kpi-tile{animation:none!important}}
+@media print{header,[aria-label="Fleet summary"],nav[aria-label="Pagination"],[role="tablist"]{display:none!important}main#main{padding:16px!important;min-height:0!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+@keyframes drillIn{0%{opacity:0;transform:translateY(26px);clip-path:inset(0 0 100% 0 round 24px)}100%{opacity:1;transform:none;clip-path:inset(0 0 0 0 round 24px)}}
+@keyframes triPulse{0%,100%{box-shadow:0 0 0 0 rgba(178,30,30,.35)}60%{box-shadow:0 0 0 6px rgba(178,30,30,0)}}
+@keyframes drillCrumb{0%{opacity:0;transform:translateX(-14px)}100%{opacity:1;transform:none}}
+@keyframes drillTile{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:none}}
+.drill-view{animation:drillIn .66s cubic-bezier(.22,.61,.18,1) both;transform-origin:center top}
+.drill-crumb{animation:drillCrumb .5s cubic-bezier(.22,.61,.18,1) both}
+.drill-grid>*{animation:drillTile .6s cubic-bezier(.22,.61,.18,1) both}
+.drill-grid>*:nth-child(1){animation-delay:.1s}.drill-grid>*:nth-child(2){animation-delay:.16s}.drill-grid>*:nth-child(3){animation-delay:.22s}.drill-grid>*:nth-child(4){animation-delay:.28s}.drill-grid>*:nth-child(5){animation-delay:.34s}.drill-grid>*:nth-child(6){animation-delay:.4s}.drill-grid>*:nth-child(n+7){animation-delay:.44s}
+@keyframes drillSheen{0%{opacity:0;transform:translateX(-120%) skewX(-18deg)}22%{opacity:.9}55%{opacity:.5}100%{opacity:0;transform:translateX(220%) skewX(-18deg)}}
+@keyframes drillAura{0%{opacity:0;transform:scale(.7)}45%{opacity:.85}100%{opacity:.55;transform:scale(1)}}
+@keyframes auraDrift{0%,100%{transform:scale(1) translate(0,0)}50%{transform:scale(1.08) translate(10px,-6px)}}
+.drill-sheen{animation:drillSheen 1.15s cubic-bezier(.3,.9,.2,1) .15s both}
+.drill-aura{animation:drillAura .9s ease-out both,auraDrift 9s ease-in-out 1s infinite}
+.ct-card:hover .ct-illo{transform:scale(1.04);opacity:.92}
+.ct-card:hover .ct-aura{transform:scale(1.12);opacity:1}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

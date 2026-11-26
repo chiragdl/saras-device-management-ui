@@ -1,0 +1,6 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#F5F7FA;color:#1A1E26;font-family:Poppins,system-ui,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}
+a{color:#005BB8}
+a:hover{color:#0070E0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+code{font-size:.92em}

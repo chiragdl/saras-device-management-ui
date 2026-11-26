@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+out/
+# real environment files hold server addresses: only .env.example is committed
+.env
+.env.*
+!.env.example
